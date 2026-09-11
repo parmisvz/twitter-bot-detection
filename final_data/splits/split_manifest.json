@@ -1,0 +1,56 @@
+{
+  "version": "phase2_final_split_v1",
+  "random_seed": 42,
+  "split_strategy": {
+    "level": "user",
+    "train_ratio": 0.7,
+    "validation_ratio": 0.15,
+    "test_ratio": 0.15,
+    "stratified_by": [
+      "label_binary",
+      "has_graph"
+    ]
+  },
+  "users": {
+    "total": 959,
+    "train": 671,
+    "validation": 144,
+    "test": 144
+  },
+  "labels": {
+    "train": {
+      "human": 540,
+      "bot": 131
+    },
+    "validation": {
+      "human": 116,
+      "bot": 28
+    },
+    "test": {
+      "human": 116,
+      "bot": 28
+    }
+  },
+  "tweets": {
+    "train_rows": 45443,
+    "validation_rows": 13968,
+    "test_rows": 11464,
+    "total_binary_gold_tweets": 70875
+  },
+  "graph": {
+    "train_owners": 193,
+    "validation_owners": 42,
+    "test_owners": 41,
+    "train_edges": 60936,
+    "validation_edges": 13006,
+    "test_edges": 12536,
+    "evaluation_type": "inductive",
+    "cross_split_gold_neighbors_allowed": false,
+    "external_and_unlabeled_neighbors_preserved": true
+  },
+  "leakage_policy": {
+    "user_overlap": false,
+    "tweet_user_overlap": false,
+    "cross_split_gold_graph_neighbors": false
+  }
+}
