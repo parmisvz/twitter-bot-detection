@@ -1,0 +1,128 @@
+{
+  "version": "preprocessing_final_v1",
+  "status": "FROZEN",
+  "task": "binary_twitter_bot_detection",
+  "target": {
+    "column": "label_binary",
+    "human": 0,
+    "bot": 1
+  },
+  "gold_binary_dataset": {
+    "total_users": 959,
+    "human": 772,
+    "bot": 187
+  },
+  "user_split": {
+    "strategy": "stratified_user_level",
+    "stratified_by": [
+      "label_binary",
+      "has_graph"
+    ],
+    "random_seed": 42,
+    "train": {
+      "users": 671,
+      "human": 540,
+      "bot": 131,
+      "graph_owners": 193
+    },
+    "validation": {
+      "users": 144,
+      "human": 116,
+      "bot": 28,
+      "graph_owners": 42
+    },
+    "test": {
+      "users": 144,
+      "human": 116,
+      "bot": 28,
+      "graph_owners": 41
+    }
+  },
+  "tabular": {
+    "initial_features": 42,
+    "removed_redundant_features": [
+      "status_count",
+      "normal_followers_count"
+    ],
+    "final_features": 40,
+    "continuous_features": 33,
+    "effective_binary_features": 7,
+    "missing_value_strategy": "median",
+    "imputer_fit_scope": "train_only",
+    "log1p_features": 30,
+    "scaler": "RobustScaler",
+    "scaler_fit_scope": "train_only",
+    "train_shape": [
+      671,
+      43
+    ],
+    "validation_shape": [
+      144,
+      43
+    ],
+    "test_shape": [
+      144,
+      43
+    ]
+  },
+  "text": {
+    "encoder_family": "xlm-roberta-base",
+    "max_tweets_per_user": 50,
+    "max_token_length": 128,
+    "truncation": true,
+    "padding": "dynamic_per_batch",
+    "train": {
+      "tweets": 12976,
+      "users": 671
+    },
+    "validation": {
+      "tweets": 2618,
+      "users": 144
+    },
+    "test": {
+      "tweets": 3006,
+      "users_with_text": 143,
+      "total_users": 144,
+      "missing_text_users": [
+        "mostafamehraeen"
+      ]
+    },
+    "cross_split_exact_text_overlap": 0
+  },
+  "graph": {
+    "evaluation_type": "inductive",
+    "relation": "follows",
+    "cross_split_gold_neighbors_allowed": false,
+    "external_and_unlabeled_neighbors_preserved": true,
+    "train": {
+      "graph_owners": 193,
+      "edges": 60936
+    },
+    "validation": {
+      "graph_owners": 42,
+      "edges": 13006
+    },
+    "test": {
+      "graph_owners": 41,
+      "edges": 12536
+    }
+  },
+  "leakage_controls": {
+    "user_overlap_between_splits": false,
+    "tweet_user_overlap_between_splits": false,
+    "exact_text_overlap_between_splits": false,
+    "cross_split_gold_graph_neighbors": false,
+    "imputer_fitted_on_validation_or_test": false,
+    "scaler_fitted_on_validation_or_test": false,
+    "feature_selection_used_validation_or_test": false
+  },
+  "unlabeled_pool": {
+    "users": 18331,
+    "used_for_current_supervised_split": false,
+    "future_role": [
+      "pseudo_labeling",
+      "semi_supervised_learning"
+    ],
+    "preprocessing_rule": "Reuse frozen Train-fitted preprocessing; never refit."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": "text_preprocessing_v1",
+  "base_model_family": "XLM-R",
+  "split_level": "user",
+  "cleaning": {
+    "unicode_normalization": "NFKC",
+    "persian_character_normalization": true,
+    "url_replacement": "URL",
+    "mention_replacement": "@USER",
+    "hashtags_preserved": true,
+    "emojis_preserved": true,
+    "case_used_only_for_duplicate_audit": true
+  },
+  "deduplication": {
+    "tweet_id_used": false,
+    "within_user_exact_text_deduplication": true,
+    "cross_split_exact_text_decontamination": true
+  },
+  "tweet_selection": {
+    "strategy": "most_recent_unique_tweets",
+    "max_tweets_per_user": 50
+  },
+  "final_rows": {
+    "train": 12976,
+    "validation": 2618,
+    "test": 3006
+  },
+  "text_users": {
+    "train": 671,
+    "validation": 144,
+    "test": 143
+  },
+  "missing_text_modality_users": {
+    "train": [],
+    "validation": [],
+    "test": [
+      "mostafamehraeen"
+    ]
+  },
+  "missing_modality_policy": "Keep the user in the frozen evaluation split and mask the text modality rather than restoring cross-split overlapping text.",
+  "tokenization": {
+    "model_name": "xlm-roberta-base",
+    "tokenizer": "XLMRobertaTokenizer",
+    "max_length": 128,
+    "truncation": true,
+    "padding_strategy": "dynamic_per_batch",
+    "add_special_tokens": true,
+    "selection_basis": "training_token_length_distribution",
+    "training_distribution": {
+      "median_tokens": 43.0,
+      "p90_tokens": 87.0,
+      "p95_tokens": 96.0,
+      "p97_tokens": 104.0,
+      "p99_tokens": 219.8,
+      "max_tokens": 2578,
+      "truncation_rate_at_128_percent": 1.91
+    },
+    "validation_truncation_rate_at_128_percent": 1.6,
+    "test_truncation_rate_at_128_percent": 2.46
+  }
+}
