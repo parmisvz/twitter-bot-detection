@@ -1,0 +1,8 @@
+{
+    "corrupt_user_keys": [
+        "1193634420000993280"
+    ],
+    "reason": "Malformed row containing repeated Twitter/X ID values across numerous unrelated profile and behavioral features.",
+    "raw_true_unlabeled_count": 18332,
+    "clean_true_unlabeled_count": 18331
+}
