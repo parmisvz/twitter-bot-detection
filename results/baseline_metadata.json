@@ -1,0 +1,16 @@
+{
+    "dataset": "Gold Binary Dataset",
+    "users": 959,
+    "train_users": 671,
+    "validation_users": 144,
+    "test_users": 144,
+    "modalities": [
+        "tabular",
+        "text",
+        "graph"
+    ],
+    "completed_baselines": [
+        "Logistic Regression",
+        "Tabular MLP"
+    ]
+}
