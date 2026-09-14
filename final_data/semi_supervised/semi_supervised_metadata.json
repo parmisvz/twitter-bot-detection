@@ -1,0 +1,12 @@
+{
+    "experiment": "Semi-supervised V1",
+    "base_model": "Multimodal Fusion",
+    "pseudo_samples": 9212,
+    "human_samples": 959,
+    "modalities": [
+        "tabular",
+        "text",
+        "graph"
+    ],
+    "training": "full_finetuning"
+}
