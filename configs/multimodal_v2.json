@@ -1,0 +1,47 @@
+{
+  "phase2_manifest": "final_data/versions/preprocessing_v2_e861084d1a722a21/manifest.json",
+  "phase2_manifest_sha256": "594a2defef59d663ef171020b7cd1ba75aa321c30e7a7d09b57b560563c109c9",
+  "embedding_manifest": "final_data/embedding_versions/xlmr_baselines_v2/manifest.json",
+  "embedding_manifest_sha256": "d68e263c41d308d350aa3a139cbb1fb9f2b703ca9ee393b4a389081009eef07d",
+  "encoder": {
+    "model": "xlm-roberta-base",
+    "dimension": 768,
+    "max_length": 128,
+    "batch_size": 16,
+    "token_pooling": "attention_mask_mean",
+    "user_pooling": "unweighted_tweet_mean",
+    "frozen": true
+  },
+  "seed": 42,
+  "device": "cpu",
+  "torch_threads": 1,
+  "graph_manifest": "results/versions/graph_baseline_v2/20260916T113841559166Z_2dd11f1e/manifest.json",
+  "graph_manifest_sha256": "80cfc22c9c165e43edeba64a80888cfe7c173088bbd6ae7d2965d17974aaf11f",
+  "baseline_manifest": "results/versions/baselines_v2/20260916T103951409018Z_7fa575b7/manifest.json",
+  "baseline_manifest_sha256": "fd5c8a4d0d7f4728238fd9d7e495289117327fa2661bed676caffe3d92ef817c",
+  "protocol": "gold-isolated owner-centric directed graphs",
+  "eligibility": "has_graph",
+  "gcn_settings": {
+    "cached": false,
+    "normalize": true,
+    "add_self_loops": true
+  },
+  "schema_version": "multimodal_v2",
+  "graph_tabular_manifest": "results/versions/graph_tabular_v2/20260916T120656079973Z_8609c94f/manifest.json",
+  "graph_tabular_manifest_sha256": "d510ae435e12edc76d2fa83677b00f1e6946b9b464eb0e6ea53e3bb021d0de12",
+  "output_root": "results/versions/multimodal_v2",
+  "training": {
+    "epochs": 200,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "threshold": 0.5,
+    "selection": "best_validation_loss"
+  },
+  "expected_counts": {
+    "train": 193,
+    "validation": 42,
+    "test": 40
+  },
+  "comparison_type": "descriptive_not_controlled_ablation"
+}
