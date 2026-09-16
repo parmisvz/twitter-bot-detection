@@ -15,3 +15,8 @@ historical; do not execute it as part of the versioned pipeline.
 `03_baseline_models_pre_v2.ipynb` is the byte-for-byte backup before the Phase-3
 compatibility refactor. It preserves the original architectures, outputs, and
 legacy export logic. Do not run its overwrite/export cells in the new pipeline.
+
+`04_graph_baseline_pre_v2.ipynb` preserves notebook 04 before the Phase-4 GCN
+protocol refactor. It uses the historical global graph, all-label class weights,
+and a shallow best-checkpoint copy. Keep its results as historical experiments;
+do not run its artifact-overwrite cells in the versioned pipeline.

@@ -1,0 +1,20 @@
+{
+  "schema_version": "graph_baseline_v2",
+  "phase2_manifest": "final_data/versions/preprocessing_v2_e861084d1a722a21/manifest.json",
+  "phase2_manifest_sha256": "594a2defef59d663ef171020b7cd1ba75aa321c30e7a7d09b57b560563c109c9",
+  "protocol": "gold-isolated owner-centric directed graphs",
+  "eligibility": "has_graph",
+  "support_policy": "Keep all observed endpoints of the permitted split graph; support accounts can overlap across splits. No cross-split gold endpoints.",
+  "message_passing": "Append reverse edges, retaining multiplicity for reciprocal observed relations; do not coalesce.",
+  "degree_feature_order": ["symmetrized_in_degree", "symmetrized_out_degree", "symmetrized_total_degree"],
+  "degree_policy": "Raw edge-entry counts before GCN computational self-loops; no scaling. Features are [d, d, 2*d].",
+  "architecture": {"input_dim": 3, "hidden_dim": 64, "second_dim": 32, "dropout": 0.3},
+  "gcn_settings": {"cached": false, "normalize": true, "add_self_loops": true},
+  "training": {"epochs": 200, "lr": 0.01, "weight_decay": 0.0005, "selection": "best_validation_loss", "threshold": 0.5},
+  "seed": 42,
+  "device": "cpu",
+  "torch_threads": 1,
+  "output_root": "results/versions/graph_baseline_v2",
+  "baseline_manifest": "results/versions/baselines_v2/20260916T103951409018Z_7fa575b7/manifest.json",
+  "baseline_manifest_sha256": "fd5c8a4d0d7f4728238fd9d7e495289117327fa2661bed676caffe3d92ef817c"
+}
