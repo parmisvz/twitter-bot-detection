@@ -24,3 +24,7 @@ Thumbs.db
 
 # Reproducible versioned preprocessing outputs; retain locally, regenerate from config.
 final_data/versions/
+
+# Explicitly registered embedding bundles and immutable baseline run outputs.
+final_data/embedding_versions/
+results/versions/
