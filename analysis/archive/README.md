@@ -29,3 +29,7 @@ Its hardcoded metric export is historical and must not overwrite versioned runs.
 ## Notebook 06
 
 `06_multimodal_fusion_pre_v2.ipynb` preserves the original notebook and outputs. Global degree inputs, silent cohort filtering, shallow best-state copies and legacy comparisons are historical limitations. Do not run it as a current pipeline stage.
+
+## Notebook 07
+
+`07_ablation_study_pre_v2.ipynb` preserves the original pairwise experiments and outputs. Its differing cohorts, global graph statistics and shallow best-state snapshots are historical limitations. The current fixed-cohort study is separately versioned; do not run this archive as a pipeline stage.
