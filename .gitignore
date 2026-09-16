@@ -21,3 +21,6 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Reproducible versioned preprocessing outputs; retain locally, regenerate from config.
+final_data/versions/

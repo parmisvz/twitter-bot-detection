@@ -1,0 +1,263 @@
+{
+  "version": "preprocessing_v2",
+  "seed": 42,
+  "raw_files": {
+    "annotated": "data/1000user_sheet - 1k_users.csv",
+    "accounts": "data/all_users_new - 19k.csv",
+    "tweets": "data/1000user_sheet - tweets_meta_data.csv",
+    "graph": "data/all_users_new - follower_following.csv"
+  },
+  "label_column": "برچسب نهایی",
+  "label_map": {
+    "human(2)": 0,
+    "bot(1)": 1
+  },
+  "identity": {
+    "key": "user_key",
+    "normalization": "strip whitespace, remove leading @, lowercase; numeric id is metadata only",
+    "invalid_account_policy": "fail except explicitly recorded exclusions; quarantine missing keys",
+    "duplicate_account_policy": "fail; never silently select a row"
+  },
+  "canonical_source": "accounts",
+  "source_rule": "Use 19K observations for both labeled and unlabeled users; labels only from annotated. Do not fill missing 19K features from annotated. Report source coverage and disagreements. Observation windows remain unverified.",
+  "feature_order": [
+    "followers_count",
+    "friends_count",
+    "favourites_count",
+    "listed_count",
+    "media_count",
+    "statuses_count",
+    "user_age",
+    "follower_growth_rate",
+    "friends_growth_rate",
+    "default_profile",
+    "default_profile_image",
+    "has_custom_timelines",
+    "possibly_sensitive",
+    "hashtag_in_description",
+    "numbers_in_description",
+    "no_type_tweet",
+    "no_type_retweet_with_comment",
+    "no_type_reply",
+    "mean_no_media_per_tweet",
+    "mean_no_words",
+    "no_languages",
+    "mean_no_hashtags",
+    "mean_favourites_per_tweet",
+    "time_between_tweets",
+    "tweet_frequency",
+    "min_tweets_per_hour",
+    "min_tweets_per_day",
+    "max_tweets_per_hour",
+    "max_tweets_per_day",
+    "max_occurence_of_same_gap",
+    "unique_mention_rate_per_tweet",
+    "mean_user_mentions_per_tweet",
+    "retweet_as_tweet_rate",
+    "no_retweet_tweets",
+    "mean_retweets_per_tweet",
+    "description_length",
+    "followers_friend_ratio",
+    "num_digits_in_name",
+    "num_digits_in_username",
+    "url_in_description"
+  ],
+  "groups": {
+    "profile": [
+      "followers_count",
+      "friends_count",
+      "favourites_count",
+      "listed_count",
+      "media_count",
+      "statuses_count",
+      "user_age",
+      "follower_growth_rate",
+      "friends_growth_rate",
+      "default_profile",
+      "default_profile_image",
+      "has_custom_timelines",
+      "possibly_sensitive",
+      "hashtag_in_description",
+      "numbers_in_description",
+      "description_length",
+      "followers_friend_ratio",
+      "num_digits_in_name",
+      "num_digits_in_username",
+      "url_in_description"
+    ],
+    "temporal": [
+      "time_between_tweets",
+      "tweet_frequency",
+      "min_tweets_per_hour",
+      "min_tweets_per_day",
+      "max_tweets_per_hour",
+      "max_tweets_per_day",
+      "max_occurence_of_same_gap"
+    ],
+    "behavioral": [
+      "no_type_tweet",
+      "no_type_retweet_with_comment",
+      "no_type_reply",
+      "mean_no_media_per_tweet",
+      "mean_no_words",
+      "no_languages",
+      "mean_no_hashtags",
+      "mean_favourites_per_tweet",
+      "unique_mention_rate_per_tweet",
+      "mean_user_mentions_per_tweet",
+      "retweet_as_tweet_rate",
+      "no_retweet_tweets",
+      "mean_retweets_per_tweet"
+    ]
+  },
+  "binary_features": [
+    "default_profile",
+    "default_profile_image",
+    "has_custom_timelines",
+    "possibly_sensitive",
+    "hashtag_in_description",
+    "numbers_in_description",
+    "url_in_description"
+  ],
+  "derived_features": [
+    "description_length",
+    "followers_friend_ratio",
+    "num_digits_in_name",
+    "num_digits_in_username",
+    "url_in_description"
+  ],
+  "log1p_features": [
+    "followers_count",
+    "friends_count",
+    "favourites_count",
+    "listed_count",
+    "media_count",
+    "statuses_count",
+    "follower_growth_rate",
+    "friends_growth_rate",
+    "no_type_tweet",
+    "no_type_retweet_with_comment",
+    "no_type_reply",
+    "mean_no_words",
+    "no_languages",
+    "mean_no_hashtags",
+    "mean_favourites_per_tweet",
+    "time_between_tweets",
+    "tweet_frequency",
+    "min_tweets_per_hour",
+    "min_tweets_per_day",
+    "max_tweets_per_hour",
+    "max_tweets_per_day",
+    "max_occurence_of_same_gap",
+    "unique_mention_rate_per_tweet",
+    "mean_user_mentions_per_tweet",
+    "retweet_as_tweet_rate",
+    "no_retweet_tweets",
+    "mean_retweets_per_tweet",
+    "followers_friend_ratio",
+    "num_digits_in_name",
+    "num_digits_in_username"
+  ],
+  "nonnegative_features": [
+    "followers_count",
+    "friends_count",
+    "favourites_count",
+    "listed_count",
+    "media_count",
+    "statuses_count",
+    "user_age",
+    "follower_growth_rate",
+    "friends_growth_rate",
+    "no_type_tweet",
+    "no_type_retweet_with_comment",
+    "no_type_reply",
+    "mean_no_media_per_tweet",
+    "mean_no_words",
+    "no_languages",
+    "mean_no_hashtags",
+    "mean_favourites_per_tweet",
+    "time_between_tweets",
+    "tweet_frequency",
+    "min_tweets_per_hour",
+    "min_tweets_per_day",
+    "max_tweets_per_hour",
+    "max_tweets_per_day",
+    "max_occurence_of_same_gap",
+    "unique_mention_rate_per_tweet",
+    "mean_user_mentions_per_tweet",
+    "retweet_as_tweet_rate",
+    "no_retweet_tweets",
+    "mean_retweets_per_tweet",
+    "description_length",
+    "followers_friend_ratio",
+    "num_digits_in_name",
+    "num_digits_in_username"
+  ],
+  "excluded_features": {
+    "external_detectors": [
+      "Botometer Score",
+      "LLM(ChatGPT)",
+      "LLM(Gemini)",
+      "Grok 4"
+    ],
+    "legacy_constant_or_unusable": [
+      "fast_followers_count",
+      "verified",
+      "is_translator",
+      "want_retweets",
+      "translator_type"
+    ],
+    "legacy_redundant": [
+      "status_count",
+      "normal_followers_count"
+    ],
+    "unimplemented": [
+      "listed_growth_rate"
+    ]
+  },
+  "quality_exclusions": {
+    "1193634420000993280": "Previously documented malformed account row with repeated ID values across unrelated fields; not a modality exclusion."
+  },
+  "split_file": "configs/frozen_user_split_v1.csv",
+  "split_origin": {
+    "path": "final_data/splits/user_split_assignment.csv",
+    "sha256": "7da9a7e40a2043352739ff5f739ee67c9f2fd4080ba8875059631230dd97f7b4",
+    "policy": "Copied once for explicit preservation; runtime never reads legacy final_data. Validate key/label coverage; fail instead of silently resplitting."
+  },
+  "missingness": {
+    "temporal": "No estimated temporal values. Canonical NaNs retained; fit each scaler on finite observed training values; zero placeholder only after scaling with per-feature observed masks. Entire absent temporal branch must be gated out.",
+    "non_temporal_numeric": "Training median before log1p and robust scaling; retain per-feature observed masks.",
+    "binary": "Training most-frequent observed value; ties choose 0; retain observed masks.",
+    "no_training_observations": "Disable feature, zero numerical placeholder, feature_enabled=0; preserve schema.",
+    "invalid_values": "Report and mark negative nonnegative measurements, infinities, and parse failures missing; never silently clip."
+  },
+  "graph": {
+    "protocol": "gold-isolated owner-centric directed graphs",
+    "split_rule": "Gold-owner graphs contain only same-split gold endpoints; support/external users may overlap across graphs. Unlabeled-owner graph excludes validation/test gold endpoints. This is not a fully node-disjoint split.",
+    "has_graph": "Owner has an observed valid neighbor list and at least one retained incident edge in the permitted graph. Node membership and owner availability also exported separately.",
+    "global_edges_role": "Audit/provenance only, not an authorized training graph.",
+    "relations": [
+      "follows"
+    ],
+    "self_edges": "Exclude from model edges and count; keep no fabricated edges."
+  },
+  "text": {
+    "normalization": "HTML unescape; NFKC; Arabic/Persian character normalization; URL and mention placeholders; whitespace; preserve hashtags/emojis",
+    "max_tweets_per_user": 50,
+    "max_token_length": 128,
+    "encoder_reference": "xlm-roberta-base",
+    "token_length_origin": "Retained historical setting; no tokenizer/model download or new held-out tuning in preprocessing.",
+    "deduplication": "Within-user exact normalized text, newest first; validation excludes train texts; test excludes train and cleaned validation texts. Preserve user rows even if all tweets removed.",
+    "has_text": "Usable tweet text OR usable description; component masks remain separate.",
+    "description_source": "Raw description if nonblank, otherwise provided clean_description; record source; do not substitute a description embedding for a tweet embedding."
+  },
+  "definition_changes": {
+    "followers_friend_ratio": "Preserve followers/friends when friends>0 and followers when friends==0. Missing/invalid denominator now remains missing instead of falling through to followers.",
+    "description_length": "Preserve raw character count for observed descriptions, including observed empty strings. Missing raw description now remains missing instead of becoming length zero.",
+    "name_digit_counts": "Preserve Unicode isdigit counts on observed strings; missing source now remains missing instead of zero.",
+    "url_in_description": "Same regex; missing raw description now remains missing instead of 0.",
+    "invalid_negative_values": "Mark invalid and report, rather than clip.",
+    "feature_selection": "Fixed historical 40-feature design, not a new full-data selection procedure. Historical test reuse remains a limitation."
+  },
+  "output_parent": "final_data/versions"
+}
