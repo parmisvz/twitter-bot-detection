@@ -20,3 +20,8 @@ legacy export logic. Do not run its overwrite/export cells in the new pipeline.
 protocol refactor. It uses the historical global graph, all-label class weights,
 and a shallow best-checkpoint copy. Keep its results as historical experiments;
 do not run its artifact-overwrite cells in the versioned pipeline.
+
+`05_graph_tabular_pre_v2.ipynb` preserves notebook 05 before its compatibility
+refactor. It uses the global graph with all gold users' tabular features, although
+class weights and deep-copy checkpoint selection are already training-correct.
+Its hardcoded metric export is historical and must not overwrite versioned runs.
