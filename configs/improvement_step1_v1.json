@@ -1,0 +1,37 @@
+{
+  "schema_version": "improvement_step1_diagnosis_v1",
+  "phase2_manifest": "final_data/versions/preprocessing_v2_e861084d1a722a21/manifest.json",
+  "phase2_manifest_sha256": "594a2defef59d663ef171020b7cd1ba75aa321c30e7a7d09b57b560563c109c9",
+  "output_root": "results/versions/improvement_step1_v1",
+  "threshold_grid": {"start": 0.0, "stop": 1.0, "points": 101},
+  "diagnostic_threshold_tiebreak": "max_bot_f1_then_nearest_0.5_then_lower_threshold",
+  "minimum_recall_targets": [0.5, 0.75, 0.9],
+  "reference_threshold": 0.5,
+  "policy": "validation_only_descriptive_no_training_no_checkpoint_or_threshold_promotion",
+  "sources": {
+    "baselines": {
+      "manifest": "results/versions/baselines_v2/20260916T103951409018Z_7fa575b7/manifest.json",
+      "sha256": "fd5c8a4d0d7f4728238fd9d7e495289117327fa2661bed676caffe3d92ef817c"
+    },
+    "graph": {
+      "manifest": "results/versions/graph_baseline_v2/20260916T113841559166Z_2dd11f1e/manifest.json",
+      "sha256": "80cfc22c9c165e43edeba64a80888cfe7c173088bbd6ae7d2965d17974aaf11f"
+    },
+    "graph_tabular": {
+      "manifest": "results/versions/graph_tabular_v2/20260916T120656079973Z_8609c94f/manifest.json",
+      "sha256": "d510ae435e12edc76d2fa83677b00f1e6946b9b464eb0e6ea53e3bb021d0de12"
+    },
+    "fusion": {
+      "manifest": "results/versions/multimodal_v2/20260916T175232735080Z_1dd8a17c/manifest.json",
+      "sha256": "0543869686db8b44701ef35c9e259c54ae9ea263c503b44e0a841658fdba44c0"
+    },
+    "ablation": {
+      "manifest": "results/versions/ablation_v2/20260916T180713858800Z_cd3b2070/manifest.json",
+      "sha256": "938a6b5f117bc415e08cf26727f861a4d0383373c6e309f0c523e658abbcd0e1"
+    },
+    "semi_supervised": {
+      "manifest": "results/versions/semi_supervised_v2/20260920T104058299599Z_da452759/manifest.json",
+      "sha256": "d971c4c13dea216e1d22d7ca12fb23506650b7a70f2d07319a79be0d02da0a65"
+    }
+  }
+}
