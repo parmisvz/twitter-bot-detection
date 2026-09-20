@@ -1,0 +1,40 @@
+{
+  "schema_version": "semi_supervised_tabular_v2",
+  "phase2_manifest": "final_data/versions/preprocessing_v2_e861084d1a722a21/manifest.json",
+  "phase2_manifest_sha256": "594a2defef59d663ef171020b7cd1ba75aa321c30e7a7d09b57b560563c109c9",
+  "baseline_manifest": "results/versions/baselines_v2/20260916T103951409018Z_7fa575b7/manifest.json",
+  "baseline_manifest_sha256": "fd5c8a4d0d7f4728238fd9d7e495289117327fa2661bed676caffe3d92ef817c",
+  "teacher_model": "tabular_mlp",
+  "teacher_checkpoint_variant": "last",
+  "student_initialization": "pinned_teacher_state",
+  "output_root": "results/versions/semi_supervised_v2",
+  "seed": 42,
+  "device": "cpu",
+  "torch_threads": 1,
+  "threshold": 0.5,
+  "training": {
+    "epochs": 50,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "selection": "best_validation_loss"
+  },
+  "pseudo_label": {
+    "confidence_threshold": 0.95,
+    "pseudo_loss_coefficient": 0.5,
+    "class_balanced_cap": 195,
+    "human_selection": "confidence_desc_then_user_key_asc_top_k",
+    "bot_selection": "retain_all_accepted",
+    "sampling": "none_deterministic_ranking",
+    "selection_seed": 42
+  },
+  "expected": {
+    "labeled_train": 671,
+    "validation": 144,
+    "test": 144,
+    "unlabeled": 18331,
+    "accepted_pseudo_bot": 195,
+    "selected_pseudo_human": 195,
+    "selected_pseudo_bot": 195
+  }
+}

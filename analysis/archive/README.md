@@ -33,3 +33,7 @@ Its hardcoded metric export is historical and must not overwrite versioned runs.
 ## Notebook 07
 
 `07_ablation_study_pre_v2.ipynb` preserves the original pairwise experiments and outputs. Its differing cohorts, global graph statistics and shallow best-state snapshots are historical limitations. The current fixed-cohort study is separately versioned; do not run this archive as a pipeline stage.
+
+## Notebook 08
+
+`08_semi_supervised_learning_pre_v2.ipynb` preserves the original notebook and outputs. Its student training includes held-out labeled users, substitutes descriptions for tweet embeddings and overwrites a supervised checkpoint. Retain it as historical evidence; do not execute its export cells or treat its metrics as valid held-out results. The active notebook uses the separately versioned tabular pseudo-label experiment.
