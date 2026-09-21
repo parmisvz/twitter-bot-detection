@@ -1,0 +1,23 @@
+{
+  "schema_version": "gcn_integration_v1",
+  "temporal_config": "configs/temporal_statistics_v1.json",
+  "temporal_manifest": "results/versions/temporal_statistics_v1/20260921T090006150868Z_61ce9da6/manifest.json",
+  "temporal_manifest_sha256": "06dcce527bf0a981e35eaf6f30531fb11f18ac49661fca7e9fffb4f7cd81a3b2",
+  "graph_manifest": "results/versions/graph_baseline_v2/20260916T113841559166Z_2dd11f1e/manifest.json",
+  "graph_manifest_sha256": "80cfc22c9c165e43edeba64a80888cfe7c173088bbd6ae7d2965d17974aaf11f",
+  "output_root": "results/versions/gcn_integration_v1",
+  "arms": ["temporal_anchor", "degree_mlp", "gcn"],
+  "seeds": [42, 43, 44],
+  "graph_input_dim": 3,
+  "graph_hidden_dims": [64, 32],
+  "fusion_hidden_dim": 32,
+  "graph_dropout": 0.3,
+  "gcn_settings": {"cached": false, "normalize": true, "add_self_loops": true},
+  "protocol": "gold-isolated owner-centric directed graphs",
+  "graph_availability": "has_graph",
+  "training_mode": "end_to_end_full_split_graph_per_training_minibatch",
+  "primary_comparison": "gcn_minus_degree_mlp",
+  "secondary_comparison": "gcn_minus_temporal_anchor",
+  "expected_graph_users": {"train": 193, "validation": 42},
+  "scope": "train_only_optimization_validation_only_selection_no_test_no_threshold_tuning_no_promotion"
+}
