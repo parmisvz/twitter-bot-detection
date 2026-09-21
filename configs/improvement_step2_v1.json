@@ -1,0 +1,22 @@
+{
+  "schema_version": "improvement_step2_weight_checkpoint_v1",
+  "phase2_manifest": "final_data/versions/preprocessing_v2_e861084d1a722a21/manifest.json",
+  "phase2_manifest_sha256": "594a2defef59d663ef171020b7cd1ba75aa321c30e7a7d09b57b560563c109c9",
+  "baseline_manifest": "results/versions/baselines_v2/20260916T103951409018Z_7fa575b7/manifest.json",
+  "baseline_manifest_sha256": "fd5c8a4d0d7f4728238fd9d7e495289117327fa2661bed676caffe3d92ef817c",
+  "output_root": "results/versions/improvement_step2_v1",
+  "seeds": [42, 43, 44],
+  "weight_rules": ["unweighted", "sqrt_train_ratio", "full_train_ratio"],
+  "architecture": {"input_dim": 40, "hidden_dims": [64, 32], "dropout": 0.3},
+  "training": {"epochs": 50, "batch_size": 32, "lr": 0.001, "weight_decay": 0.0001},
+  "device": "cpu",
+  "torch_threads": 1,
+  "threshold": 0.5,
+  "checkpoint_policies": ["last", "best_weighted_validation_loss", "best_unweighted_validation_loss"],
+  "primary_comparison_policy": "best_unweighted_validation_loss",
+  "checkpoint_tie_rule": "earliest_epoch",
+  "weighted_loss_aggregation": "mean_of_batch_means_baseline_compatible",
+  "unweighted_validation_aggregation": "mean_over_users",
+  "expected": {"train_users": 671, "train_humans": 540, "train_bots": 131, "validation_users": 144, "validation_bots": 28},
+  "scope": "train_only_optimization_validation_only_selection_no_test_no_threshold_tuning_no_promotion"
+}
