@@ -1,0 +1,12 @@
+{
+  "schema_version": "gated_fusion_v1",
+  "source_manifest": "results/versions/graph_scaling_v1/20260922T052601567701Z_4a1137a7/manifest.json",
+  "source_manifest_sha256": "ad246e1e0bf8123d6c93a3c631afd8a1d3d75ecfa6b5d8aad008129fedf71b3e",
+  "output_root": "results/versions/gated_fusion_v1",
+  "seeds": [42, 43, 44],
+  "arms": ["concat", "gated"],
+  "gate": "2_sigmoid_linear_99_to_3_zero_initialized_times_availability",
+  "expected_parameters": {"concat": 7441, "gated": 7741},
+  "threshold": 0.5,
+  "scope": "train_only_validation_only_no_test_no_threshold_tuning_no_promotion"
+}
