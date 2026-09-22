@@ -1,0 +1,12 @@
+{
+  "schema_version": "graph_scaling_v1",
+  "source_manifest": "results/versions/gcn_integration_v1/20260921T103149397425Z_0df4d0e8/manifest.json",
+  "source_manifest_sha256": "140fa517eb7b66d9f2edee48303912bdec41e1828b069f54c534a156cbe70bb6",
+  "output_root": "results/versions/graph_scaling_v1",
+  "arms": ["degree_mlp", "gcn"],
+  "seeds": [42, 43, 44],
+  "scale_rule": "sqrt_mean_squared_three_channels_training_graph_available_canonical_users",
+  "expected_fit_users": 193,
+  "threshold": 0.5,
+  "scope": "graph_input_scalar_only_no_other_feature_changes_no_test_no_threshold_tuning_no_promotion"
+}
