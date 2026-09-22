@@ -1,0 +1,11 @@
+{
+  "schema_version": "graph_diagnosis_v1",
+  "source_manifest": "results/versions/gcn_integration_v1/20260921T103149397425Z_0df4d0e8/manifest.json",
+  "source_manifest_sha256": "140fa517eb7b66d9f2edee48303912bdec41e1828b069f54c534a156cbe70bb6",
+  "output_root": "results/versions/graph_diagnosis_v1",
+  "splits": ["train", "validation"],
+  "policies": ["best_unweighted_validation_loss", "last"],
+  "threshold": 0.5,
+  "reliability_bins": 10,
+  "scope": "frozen_checkpoint_diagnosis_no_training_no_calibration_fit_no_threshold_selection_no_test_no_promotion"
+}
