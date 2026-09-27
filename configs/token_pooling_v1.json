@@ -1,0 +1,15 @@
+{
+  "schema_version": "token_pooling_v1",
+  "temporal_manifest": "results/versions/temporal_statistics_v1/20260921T090006150868Z_61ce9da6/manifest.json",
+  "temporal_manifest_sha256": "06dcce527bf0a981e35eaf6f30531fb11f18ac49661fca7e9fffb4f7cd81a3b2",
+  "output_root": "results/versions/token_pooling_v1",
+  "arms": ["P0", "P1"],
+  "seeds": [42, 43, 44],
+  "expected_parameters": {"P0": 16897, "P1": 16897},
+  "training": {"epochs": 50, "batch_size": 32, "lr": 0.001, "weight_decay": 0.0001},
+  "dropout": 0.3,
+  "torch_threads": 1,
+  "threshold": 0.5,
+  "selection": "best_unweighted_validation_loss",
+  "scope": "pinned_dual_token_pooling_only_no_test_no_graph_no_finetuning_no_promotion"
+}
