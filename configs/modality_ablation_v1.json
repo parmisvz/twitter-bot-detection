@@ -1,0 +1,34 @@
+{
+  "schema_version": "modality_ablation_v1",
+  "arms": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "expected_parameters": {
+    "M0": 3329,
+    "M1": 12881,
+    "M2": 4081,
+    "M3": 16145,
+    "M4": 16897
+  },
+  "training": {
+    "epochs": 50,
+    "batch_size": 32,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "threshold": 0.5,
+  "selection": "best_unweighted_validation_loss",
+  "classifier_seed_rule": "300000 + seed",
+  "reference_config": "configs/contrastive_v1.json",
+  "reference_config_sha256": "0d5027d28c4d46864b3cec4836b357ef354bb8f1c4f411bef1674ee6e5ef630d",
+  "output_root": "results/versions/modality_ablation_v1"
+}
