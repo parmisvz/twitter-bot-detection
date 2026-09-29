@@ -1,0 +1,7 @@
+{
+  "schema_version": "target_audit_v1",
+  "registry": "results/versions/target_audit_v1/seed20260928_n600/private/exclusion_registry.json",
+  "sha256": "5869561a88a725c8e6e470b896416be3b99c7067308ebf85775519c8e828ec2f",
+  "sample_manifest": "results/versions/target_audit_v1/seed20260928_n600/manifest.json",
+  "sample_manifest_sha256": "d3efa97d71eb3330befca5b0beb0c6919284cb08a11999082d4b473435e03047"
+}
