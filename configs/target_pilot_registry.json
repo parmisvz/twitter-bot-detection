@@ -1,0 +1,5 @@
+{
+  "registry": "results/versions/target_annotation_pilot_v1/private/exclusion_registry.json",
+  "sha256": "16d8a0a070771b209259e9024384c79ce45a7e26bba16723f1d157b88c9279ef",
+  "role": "pilot_only"
+}
